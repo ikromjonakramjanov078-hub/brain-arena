@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRAIN ARENA — Bilimlar maydoni</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <header class="topbar">
+    <div class="brand"><span>◆</span> BRAIN ARENA</div>
+    <div class="top-info">BILIMINGNI SINOVDAN O‘TKAZ</div>
+  </header>
+
+  <main class="container">
+    <section id="homeScreen" class="screen active">
+      <div class="hero">
+        <div class="eyebrow">✦ BILIM • TEZLIK • G‘ALABA ✦</div>
+        <h1>BILIMINGNI<br><span>SINOVDAN O‘TKAZ!</span></h1>
+        <p>Har bir savol — yangi imkoniyat. O‘zingni sinab ko‘r!</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><span>JAMI SAVOLLAR</span><strong id="totalQuestions">0</strong></div>
+        <div class="stat-card"><span>O‘YINLAR</span><strong id="gamesPlayed">0</strong></div>
+        <div class="stat-card"><span>ENG YUQORI BALL</span><strong id="bestScore">0</strong></div>
+      </div>
+
+      <div class="panel">
+        <h2>⚡ O‘YINNI SOZLASH</h2>
+
+        <label for="category">Fan yoki yo‘nalishni tanlang</label>
+        <select id="category">
+          <option value="all">Barcha fanlar</option>
+          <option value="history">Tarix</option>
+          <option value="it">Dasturlash va IT</option>
+          <option value="logic">Mantiq</option>
+          <option value="math">Matematika</option>
+          <option value="science">Tabiiy fanlar</option>
+          <option value="general">Umumiy bilim</option>
+        </select>
+
+        <label for="difficulty">Qiyinlik darajasi</label>
+        <select id="difficulty">
+          <option value="easy">Oson</option>
+          <option value="medium" selected>O‘rta</option>
+          <option value="hard">Qiyin</option>
+          <option value="mixed">Aralash</option>
+        </select>
+
+        <label for="questionCount">Savollar soni</label>
+        <select id="questionCount">
+          <option value="10">10 ta savol</option>
+          <option value="15">15 ta savol</option>
+          <option value="20" selected>20 ta savol</option>
+          <option value="30">30 ta savol</option>
+        </select>
+
+        <button id="startButton" class="gold-button">O‘YINNI BOSHLASH →</button>
+      </div>
+
+      <div class="panel history-panel">
+        <div class="section-heading">
+          <h2>🏆 SO‘NGGI NATIJALAR</h2>
+          <button id="clearHistory" class="small-button">Tozalash</button>
+        </div>
+        <div id="historyList" class="history-list"></div>
+      </div>
+
+      <footer>
+        <div class="author-label">LOYIHA MUALLIFI</div>
+        <div class="author-name">AKRAMJONOVA JADRA MARATOVNA</div>
+        <div class="footer-subtitle">BRAIN ARENA © 2026</div>
+      </footer>
+    </section>
+
+    <section id="quizScreen" class="screen">
+      <div class="quiz-top">
+        <button id="quitButton" class="small-button">← Chiqish</button>
+        <div class="quiz-counter" id="questionCounter">1 / 20</div>
+        <div class="timer" id="timer">20</div>
+      </div>
+
+      <div class="progress-track"><div id="progressBar"></div></div>
+
+      <div class="quiz-meta">
+        <span id="questionCategory">TARIX</span>
+        <span id="questionDifficulty">O‘RTA</span>
+      </div>
+
+      <div class="question-card">
+        <div class="question-number" id="questionNumber">SAVOL 01</div>
+        <h2 id="questionText">Savol shu yerda ko‘rinadi</h2>
+        <div id="answerOptions" class="answers"></div>
+      </div>
+
+      <div class="quiz-bottom">
+        <span id="scoreDisplay">BALL: 0</span>
+        <button id="nextButton" class="gold-button" disabled>KEYINGI →</button>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="result-card">
+        <div class="eyebrow">✦ SINOV YAKUNLANDI ✦</div>
+        <h1 id="resultTitle">AJOYIB!</h1>
+        <div class="score-circle"><span id="finalScore">0</span><small>BALL</small></div>
+
+        <div class="result-stats">
+          <div><span>To‘g‘ri</span><strong id="correctCount">0</strong></div>
+          <div><span>Noto‘g‘ri</span><strong id="wrongCount">0</strong></div>
+          <div><span>Aniqlik</span><strong id="accuracy">0%</strong></div>
+        </div>
+
+        <p id="resultMessage"></p>
+        <button id="restartButton" class="gold-button">YANA O‘YNASH ↻</button>
+        <button id="homeButton" class="outline-button">BOSH SAHIFA</button>
+      </div>
+
+      <footer>
+        <div class="author-label">LOYIHA MUALLIFI</div>
+        <div class="author-name">AKRAMJONOVA JADRA MARATOVNA</div>
+      </footer>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
